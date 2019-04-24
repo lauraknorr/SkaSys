@@ -1,69 +1,165 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
+<head>
+      <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>TODO | Anleitung</title>
+    <title>TODO | Editierung</title>
   </head>
+  
   <body style="margin: 20px">
+     <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navigation</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" href="uebersicht.html">Übersicht</a>
+            <a class="nav-item nav-link active" href="neuesTodo.html">Neues TODO <span class="sr-only">(current)</span</a>
+            <a class="nav-item nav-link" href="anleitungTODO.html">Anleitung</a>
+            <a class="nav-item nav-link" href="impressum.html">Impressum</a>
+          </div>
+        </div>
+      </nav>  
 
-  <body>
- <nav class="navbar navbar-expand-md navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navigation</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link " href="uebersicht.html">Übersicht</a>
-      <a class="nav-item nav-link" href="neuesTodo.html">Neues TODO</a>
-      <a class="nav-item nav-link active" href="anleitungTODO.html">Anleitung<span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="impressum.html">Impressum </a>
+    <div class = "jumbotron text-center">
+      <h1>Editierung eines TODO Eintrags </h1>
     </div>
-  </div>
-</nav> 
 
-<div class = "jumbotron text-center">
-  <h1>Anleitung zur Editierung eines TODO Eintrags </h1>
-</div>
 
-<ul class="list-group">
-  <li class="list-group-item"><h3>Schritt 1</h3>
-    <div>
-      Gehen Sie zu der <a href="uebersicht.html">Übersicht</a>
-      <br>
-      <img src="https://raw.githubusercontent.com/lauraknorr/SkaSys/master/uebersicht.jpg?token=AL4SCR3NYWZQMIS6DDA27XC4YCIJ2" class="img-fluid" alt="Responsive image">
+      <div class="container">
+          <div class="jumbotron bg-light">
+          <h1>Bearbeiten</h1>
+
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                TODO wählen
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">GIT anlegen</a>
+                <a class="dropdown-item" href="#">Hausaufgabe 1</a>
+              </div>
+            </div>
+
+
+        <br>
+        <form>
+          
+          <div class="form-group">
+            <label for="name">Namen bearbeiten</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Neuer Name">
+          </div>
+          
+          <div class="form-group">
+            <label for="beschreibung">Beschreibung bearbeiten</label>
+            <input type="textarea" class="form-control" id="formGroupExampleInput2" placeholder="Neue Beschreibung" maxlength="160">
+          </div>
+          
+          <div class="form-group">
+            <label for="deadline">Deadline bearbeiten</label>
+              <div class = "form-group row">
+                <div class = "col-xs-4">
+                  <div class = "container">
+                    <label for = "tag"> Tag </label>
+                    <select class="form-control" id="tag">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                      <option>10</option>
+                      <option>11</option>
+                      <option>12</option>
+                      <option>13</option>
+                      <option>14</option>
+                      <option>15</option>
+                      <option>16</option>
+                      <option>17</option>
+                      <option>18</option>
+                      <option>19</option>
+                      <option>20</option>
+                      <option>21</option>
+                      <option>22</option>
+                      <option>23</option>
+                      <option>24</option>
+                      <option>25</option>
+                      <option>26</option>
+                      <option>27</option>
+                      <option>28</option>
+                      <option>29</option>
+                      <option>30</option>
+              	      <option>31</option>	
+                    </select>
+                </div>
+              </div>
+                <div class = "col-xs-4">
+                  <div class = "container">
+                    <label for = "monat"> Monat </label>
+                    <select class="form-control" id="monat">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                      <option>10</option>
+                      <option>11</option>
+                      <option>12</option>
+                    </select>
+                </div>
+              </div>
+              <div class = "col-xs-4">
+                <div class = "container">
+                  <label for = "jahr"> Jahr </label>
+                    <select class="form-control" id="jahr">
+                      <option>2019</option>
+                      <option>2020</option>
+                      <option>2021</option>
+                      <option>2022</option>
+                      <option>2023</option>
+                      <option>2024</option>
+                      <option>2025</option>
+                      <option>2026</option>
+                      <option>2027</option>
+                      <option>2028</option>
+              	      <option>2029</option>
+                      <option>2030</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="progress">Status bearbeiten</label>
+            <div class = "progress">
+			  			<div class="progress-bar progress-bar-striped bg-success" role = "progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">
+			  				75%
+			  			</div>
+			  		</div>
+			  	</div>
+			  	
+			  	<br>
+			  	
+			  	<div>
+			  	  <button type = "button" class = "btn btn-primary">Änderungen bestätigen</button>
+			  	</div>
+			  	
+        </form>
+      </div>
     </div>
-  </li>
-  <li class="list-group-item"><h3>Schritt 2</h3>
-    <div>
-      Suchen Sie sich den Eintrag aus, welchen Sie bearbeiten möchten
-      <br>
-      <img src="https://raw.githubusercontent.com/lauraknorr/SkaSys/master/auswahl.jpg?token=AL4SCRYICU2ZXDHUP4UDHO24YCIN4" class="img-fluid" alt="Responsive image">
-    </div>
-  </li>
-  <li class="list-group-item"><h3>Schritt 3</h3>
-    <div>
-     Drücken Sie den "Bearbeiten" Knopf, welcher es Ihnen ermöglicht, den Eintrag zu editieren
-     <br>
-      <img src="https://raw.githubusercontent.com/lauraknorr/SkaSys/master/click.jpg?token=AL4SCR6LWJ2CLUXSTYXQGJ24YCIRM" class="img-fluid" alt="Responsive image">
-    </div>
-  </li>
-</ul>
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
 
   </body>
 </html>
