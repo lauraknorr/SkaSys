@@ -8,12 +8,12 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-
 </head>
+<body style="margin: 20px">
+
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-md navbar-light bg-light">
   <a class="navbar-brand" href="#">Navigation</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -22,7 +22,7 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link" href="uebersicht.html">Übersicht</a>
       <a class="nav-item nav-link active" href="neuesTodo.html">Neues TODO<span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="#">Anleitung</a>
+      <a class="nav-item nav-link" href="anleitungTODO.html">Anleitung</a>
       <a class="nav-item nav-link" href="impressum.html">Impressum</a>
     </div>
   </div>
@@ -39,13 +39,14 @@
       <label for = "titel">Titel:</label>
       <input type = "text" class = "form-control" id = "titel">
     </div>
+
     <div class = "form-group">
       <label for= "beschreibung">Beschreibung:</label>
       <textarea class = "form-control" maxlength="160" id = "beschreibung"></textarea>
     </div>
-    <div class = "container-fluid">
+
     <label for = "deadline">Deadline:</label>
-    <div class = "form-group row" id ="deadline">
+    <div class = "form-group row">
       <div class = "col-xs-4">
         <div class = "container">
         <label for = "tag"> Tag </label>
@@ -124,16 +125,10 @@
         </div>
       </div>
     </div>
-  </div>
-    <!--
-    <div class "form-group">
-      <label for "status">Status:</label>
-      <input type = "text" class = "form-control" id = "status"><br>
-    </div>
-  -->
       <button type = "submit" class="btn btn-primary">Erstellen</button>
   </form>
 </div>
+
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
