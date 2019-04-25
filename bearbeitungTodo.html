@@ -20,8 +20,8 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="nav-item nav-link" href="uebersicht.html">Übersicht</a>
-            <a class="nav-item nav-link active" href="neuesTodo.html">Neues TODO <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="anleitungTODO.html">Anleitung</a>
+            <a class="nav-item nav-link" href="neuesTodo.html">Neues TODO </a>
+            <a class="nav-item nav-link active" href="bearbeitungTodo.html">Editieren<span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="impressum.html">Impressum</a>
           </div>
         </div>
@@ -32,7 +32,7 @@
     </div>
 
 
-      <div class="container">
+      <div class="container-fluid">
           <div class="jumbotron bg-light">
           <h1>Bearbeiten</h1>
 
@@ -141,25 +141,27 @@
                 </div>
               </div>
           </div>
-          
-          <div class="form-group">
-            <label for="progress">Status bearbeiten</label>
-            <div id="progress">
-		<div class="progress-bar progress-bar-striped bg-success" role = "progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">
-		75%
-		</div>
-	    </div>
-	   </div>
-			  	
+        <div class="form-group">
+          <label for = "percentageInput">Status Bearbeiten</label>
+          <input type = "range" class = "custom-range" min= "0" max= "100" step = "1" id = "percentageInput" oninput="ageOutputId.value = percentageInput.value">
+          <output name="ageOutputName" id="ageOutputId">50</output>
+          %
+        </div>
+
 	   <br>
 			  	
 	   <div>
-		<button type = "button" class = "btn btn-primary">Änderungen bestätigen</button>
+		<button type = "submit" class = "btn btn-primary">Änderungen bestätigen</button>
 	   </div>
 			  	
         </form>
       </div>
     </div>
-
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>

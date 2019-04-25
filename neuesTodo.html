@@ -2,12 +2,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title> TODO | Neues TODO</title>
   	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title> TODO | Neues TODO</title>
 </head>
 <body style="margin: 20px">
 	
@@ -20,7 +21,7 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link" href="uebersicht.html">Übersicht</a>
       <a class="nav-item nav-link active" href="neuesTodo.html">Neues TODO<span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="anleitungTODO.html">Anleitung</a>
+      <a class="nav-item nav-link" href="bearbeitungTodo.html">Editieren</a>
       <a class="nav-item nav-link" href="impressum.html">Impressum</a>
     </div>
   </div>
@@ -32,18 +33,20 @@
 </div>
 
 <div class = "container-fluid">
+  <div class = "jumbotron bg-light">
+
   <form>
     <div class = "form-group">
-      <label for = "titel">Titel:</label>
+      <label for = "titel">Titel</label>
       <input type = "text" class = "form-control" id = "titel">
     </div>
 
     <div class = "form-group">
-      <label for= "beschreibung">Beschreibung:</label>
+      <label for= "beschreibung">Beschreibung</label>
       <textarea class = "form-control" maxlength="160" id = "beschreibung"></textarea>
     </div>
 
-    <label for = "deadline">Deadline:</label>
+    <label for = "deadline">Deadline</label>
     <div class = "form-group row">
       <div class = "col-xs-4">
         <div class = "container">
@@ -117,14 +120,21 @@
           <option>2026</option>
           <option>2027</option>
           <option>2028</option>
-  	  <option>2029</option>
+  	      <option>2029</option>
           <option>2030</option>
           </select>
         </div>
       </div>
-    </div>
-      <button type = "submit" class="btn btn-primary">Erstellen</button>
-  </form>
+
+      <br>
+
+      </div>
+      <div>
+        <button type = "submit" class="btn btn-primary">Erstellen</button>
+      </div>
+
+    </form>
+  </div>
 </div>
 
 <!-- Optional JavaScript -->
