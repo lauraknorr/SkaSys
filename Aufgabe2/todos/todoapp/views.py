@@ -1,9 +1,13 @@
 from django.shortcuts import render, HttpResponse
-from .forms import TodoForm
+from .models import Todo
 
 # Create your views here.
+
 def home(request):
-    return render(request, 'todotemps/uebersicht.html')
+    context = {
+        'todos': Todo.objects.all()
+    }
+    return render(request, 'todotemps/uebersicht.html', context)
 
 def neuesTodo(request):
 

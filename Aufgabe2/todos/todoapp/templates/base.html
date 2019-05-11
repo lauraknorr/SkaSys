@@ -25,19 +25,19 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             {% block navUebersicht%}
-            <a class="nav-item nav-link" href="uebersicht.html">Übersicht</a>
+            <a class="nav-item nav-link" href="{% url 'todo-uebersicht' %}">Übersicht</a>
             {% endblock %}
 
             {% block navNeuesTodo%}
-            <a class="nav-item nav-link" href="neuesTodo.html">Neues TODO</a>
+            <a class="nav-item nav-link" href="{% url 'todo-neu' %}">Neues TODO</a>
             {% endblock %}
 
             {% block navBearbeitung%}
-            <a class="nav-item nav-link" href="bearbeitungTodo.html">Editieren</a>
+            <a class="nav-item nav-link" href="{% url 'todo-bearbeitung' %}">Editieren</a>
             {% endblock %}
 
             {% block navImpressum%}
-            <a class="nav-item nav-link" href="impressum.html">Impressum</a>
+            <a class="nav-item nav-link" href="{% url 'todo-impressum' %}">Impressum</a>
             {% endblock %}
           </div>
         </div>
