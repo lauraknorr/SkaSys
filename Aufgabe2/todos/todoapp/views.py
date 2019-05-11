@@ -1,21 +1,32 @@
 from django.shortcuts import render, HttpResponse
-from .forms import TodoForm
+from .models import Todo
 
 # Create your views here.
+
+todos = [
+    {
+        'titel':'Todo Nr 1',
+        'beschreibung':'Todos auflisten können',
+        'deadline':'14 Mai 2019',
+        'status':20
+    },
+    {
+        'titel':'Todo Nr 2',
+        'beschreibung':'Todos löschen können',
+        'deadline':'14 Mai 2019',
+        'status':75
+    }
+]
+
+
+
 def home(request):
-    return render(request, 'todotemps/uebersicht.html')
+    context = {
+        'todos': Todo.objects.all()
+    }
+    return render(request, 'todotemps/uebersicht.html', context)
 
 def neuesTodo(request):
-
-    if request.method == 'POST':
-        form = TodoForm(request.POST)
-        if form.is_valid():
-            titel = form.cleaned_data['titel']
-            beschreibung = form.cleaned_data['Beschreibung']
-            tag = form.cleaned_data['tag']
-            monat = form.cleaned_data['monat']
-
-    form = TodoForm()
     return render(request, 'todotemps/neuesTodo.html')
 
 def bearbeitungTodo(request):
