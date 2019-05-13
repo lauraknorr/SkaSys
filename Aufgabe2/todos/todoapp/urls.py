@@ -7,4 +7,6 @@ urlpatterns = [
     url(r'^neuesTodo',views.neuesTodo, name='todo-neu'),
     url(r'^bearbeitungTodo', views.bearbeitungTodo, name='todo-bearbeitung'),
     url(r'^impressum', views.impressum, name='todo-impressum'),
+
+    #url(r'^add_todo',views.add_todo, name='add_todo')
 ]

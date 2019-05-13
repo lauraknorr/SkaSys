@@ -23,8 +23,9 @@
         TODO wählen
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">GIT anlegen</a>
-        <a class="dropdown-item" href="#">Hausaufgabe 1</a>
+        {% for todo in todos %}
+        <a class="dropdown-item" href="#">{{ todo.titel }}</a>
+        {% endfor %}
       </div>
     </div>
 
