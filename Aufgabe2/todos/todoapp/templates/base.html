@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--Base datei-->
+
 <html lang="en">
     <head>
       {%block head%}
@@ -30,10 +30,6 @@
 
             {% block navNeuesTodo%}
             <a class="nav-item nav-link" href="{% url 'todo-neu' %}">Neues TODO</a>
-            {% endblock %}
-
-            {% block navBearbeitung%}
-            <a class="nav-item nav-link" href="{% url 'todo-bearbeitung' %}">Editieren</a>
             {% endblock %}
 
             {% block navImpressum%}

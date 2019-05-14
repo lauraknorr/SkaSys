@@ -4,116 +4,60 @@
 {% block title %}{{block.super}} | Neues TODO {% endblock %}
 
 {%block navNeuesTodo%}
-  <a class="nav-item nav-link active" href="neuesTodo.html">Neues TODO<span class="sr-only">(current)</span></a>
+  <a class="nav-item nav-link active" href="{% url 'todo-neu' %}">Neues TODO<span class="sr-only">(current)</span></a>
 {%endblock%}
 
 {%block body%}{{block.super}}
-  <div class = "jumbotron text-center">
-    <h1>Neues TODO erstellen</h1>
-  </div>
+<div class = "jumbotron text-center">
+  <h1>Neues TODO erstellen</h1>
+</div>
 
-  <div class = "container-fluid">
-    <div class = "jumbotron bg-light">
+<div class = "container-fluid">
+  <div class = "jumbotron bg-light">
 
-      <form>
-        <div class = "form-group">
+    <form method="POST" action="{% url 'todo-neu' %}">
+      {%csrf_token%}
+      <div class = "form-group">
           <label for = "titel">Titel</label>
-          <input type = "text" class = "form-control" id = "titel">
-        </div>
+            {{form.titel}}
+      </div>
 
-        <div class = "form-group">
-          <label for= "beschreibung">Beschreibung</label>
-          <textarea class = "form-control" maxlength="160" id = "beschreibung"></textarea>
-        </div>
+      <div class = "form-group">
+        <label for= "beschreibung">Beschreibung</label>
+          {{form.beschreibung}}
+      </div>
 
-        <label for = "deadline">Deadline</label>
+      <label for = "deadline">Deadline</label>
         <div class = "form-group row">
+
           <div class = "col-xs-4">
             <div class = "container">
               <label for = "tag"> Tag </label>
-              <select class="form-control" id="tag">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-                <option>11</option>
-                <option>12</option>
-                <option>13</option>
-                <option>14</option>
-                <option>15</option>
-                <option>16</option>
-                <option>17</option>
-                <option>18</option>
-                <option>19</option>
-                <option>20</option>
-                <option>21</option>
-                <option>22</option>
-                <option>23</option>
-                <option>24</option>
-                <option>25</option>
-                <option>26</option>
-                <option>27</option>
-                <option>28</option>
-                <option>29</option>
-                <option>30</option>
-                <option>31</option>
-              </select>
+                {{form.tag}}
             </div>
           </div>
 
           <div class = "col-xs-4">
             <div class = "container">
               <label for = "monat"> Monat </label>
-              <select class="form-control" id="monat">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-                <option>11</option>
-                <option>12</option>
-              </select>
+                {{form.monat}}
             </div>
           </div>
+
           <div class = "col-xs-4">
             <div class = "container">
               <label for = "jahr"> Jahr </label>
-              <select class="form-control" id="jahr">
-                <option>2019</option>
-                <option>2020</option>
-                <option>2021</option>
-                <option>2022</option>
-                <option>2023</option>
-                <option>2024</option>
-                <option>2025</option>
-                <option>2026</option>
-                <option>2027</option>
-                <option>2028</option>
-                <option>2029</option>
-                <option>2030</option>
-              </select>
+                {{form.jahr}}
             </div>
           </div>
-
-          <br>
-
-        </div>
-        <div>
-          <button type = "submit" class="btn btn-primary">Erstellen</button>
         </div>
 
-      </form>
-    </div>
+      <br>
+
+      <div>
+        <button type = "submit" class="btn btn-primary">Erstellen</button>
+      </div>
+    </form>
   </div>
-  {%endblock body%}
+</div>
+{%endblock body%}
