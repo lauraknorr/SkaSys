@@ -67,9 +67,9 @@ class TodoForm(forms.ModelForm):
         (2028,'2028'),
         (2029,'2029'),
     )
-    titel = forms.CharField(label='Titel', max_length=15)
-    beschreibung = forms.CharField(label = 'Beschreibung', widget = forms.Textarea, max_length = 160)
-    tag = forms.ChoiceField(label="Tag", choices = DAYS, required=True)
-    monat = forms.ChoiceField(label="Monat", choices = MONTHS, required=True)
-    jahr = forms.ChoiceField(label="Jahr", choices = YEARS, required=True)
-    status = forms.IntegerField(label = "Status", required = False)
+    titel = forms.CharField(label='Titel',widget = forms.TextInput(attrs = {'class':"form-control"}), max_length=15)
+    beschreibung = forms.CharField(label = 'Beschreibung', widget = forms.Textarea(attrs = {'class':"form-control"}), max_length = 160)
+    tag = forms.ChoiceField(label="Tag", choices = DAYS, widget = forms.Select(attrs = {'class':"form-control"}), required=True)
+    monat = forms.ChoiceField(label="Monat", choices = MONTHS,widget = forms.Select(attrs = {'class':"form-control"}), required=True)
+    jahr = forms.ChoiceField(label="Jahr", choices = YEARS,widget = forms.Select(attrs = {'class':"form-control"}), required=True)
+    status = forms.IntegerField(label = "Status",widget = forms.NumberInput(attrs = {'class':"form-control",}) ,required = False, max_value = 100, min_value = 0)

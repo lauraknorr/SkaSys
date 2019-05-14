@@ -4,34 +4,30 @@
 {% block title %}{{block.super}} | Neues TODO {% endblock %}
 
 {%block navNeuesTodo%}
-  <a class="nav-item nav-link active" href="neuesTodo.html">Neues TODO<span class="sr-only">(current)</span></a>
+  <a class="nav-item nav-link active" href="{% url 'todo-neu' %}">Neues TODO<span class="sr-only">(current)</span></a>
 {%endblock%}
 
 {%block body%}{{block.super}}
-  <div class = "jumbotron text-center">
-    <h1>Neues TODO erstellen</h1>
-  </div>
+<div class = "jumbotron text-center">
+  <h1>Neues TODO erstellen</h1>
+</div>
 
-  <div class = "container-fluid">
-    <div class = "jumbotron bg-light">
+<div class = "container-fluid">
+  <div class = "jumbotron bg-light">
 
-      <form method="POST" action="{% url 'todo-neu' %}">
-        {%csrf_token%}
-
+    <form method="POST" action="{% url 'todo-neu' %}">
+      {%csrf_token%}
       <div class = "form-group">
           <label for = "titel">Titel</label>
-          <br>
-          {{form.titel}}
-        </div>
+            {{form.titel}}
+      </div>
 
-        <div class = "form-group">
-          <label for= "beschreibung">Beschreibung</label>
-          <br>
+      <div class = "form-group">
+        <label for= "beschreibung">Beschreibung</label>
           {{form.beschreibung}}
+      </div>
 
-        </div>
-
-        <label for = "deadline">Deadline</label>
+      <label for = "deadline">Deadline</label>
         <div class = "form-group row">
 
           <div class = "col-xs-4">
@@ -47,21 +43,21 @@
                 {{form.monat}}
             </div>
           </div>
+
           <div class = "col-xs-4">
             <div class = "container">
               <label for = "jahr"> Jahr </label>
                 {{form.jahr}}
             </div>
           </div>
-
-          <br>
-
-        </div>
-        <div>
-          <button type = "submit" class="btn btn-primary">Erstellen</button>
         </div>
 
-      </form>
-    </div>
+      <br>
+
+      <div>
+        <button type = "submit" class="btn btn-primary">Erstellen</button>
+      </div>
+    </form>
   </div>
-  {%endblock body%}
+</div>
+{%endblock body%}

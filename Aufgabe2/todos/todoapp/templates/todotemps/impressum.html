@@ -4,18 +4,19 @@
 {% block title %}{{block.super}} | Impressum{% endblock %}
 
 {%block navImpressum%}
-  <a class="nav-item nav-link active" href="impressum.html">Impressum <span class="sr-only">(current)</span></a>
+<a class="nav-item nav-link active" href="{% url 'todo-impressum' %}">Impressum <span class="sr-only">(current)</span></a>
 {%endblock%}
+
 {%block body%}{{block.super}}
 
-  <div class = "jumbotron text-center">
-    <h1>Impressum</h1>
-    <h3>Das folgende Impressum beinhaltet die Namen der Autoren und einen Link zu ihren GitHub Accounts </h3>
-  </div>
+<div class = "jumbotron text-center">
+  <h1>Impressum</h1>
+  <h3>Das folgende Impressum beinhaltet die Namen der Autoren und einen Link zu ihren GitHub Accounts </h3>
+</div>
 
-  <div class = "container-fluid">
-    <div class = "table-responsive">
-     <table class = "table">
+<div class = "container-fluid">
+  <div class = "table-responsive">
+    <table class = "table">
       <thead class="thead-light">
         <tr>
           <th style="width:25%"></th>
@@ -24,6 +25,7 @@
       </thead>
 
       <tbody>
+        
         <tr>
           <th scope="picture">
             <img src="http://westlandchildrensacademy.com/wp-content/uploads/generic-female-profile-picture-8.jpg" class="rounded float-left" alt="...">
@@ -47,9 +49,9 @@
             </address>
           </td>
         </tr>
+
       </tbody>
     </table>
-
   </div>
 </div>
 {%endblock body%}

@@ -4,51 +4,64 @@
 {% block title %}{{block.super}} | Übersicht {% endblock %}
 
 {%block navUebersicht%}
-	<a class="nav-item nav-link active" href="uebersicht.html">Übersicht <span class="sr-only">(current)</span></a>
+	<a class="nav-item nav-link active" href="{% url 'todo-uebersicht' %}">Übersicht <span class="sr-only">(current)</span></a>
 {%endblock navUebersicht%}
 
 {%block body%}{{block.super}}
 
-	<div class = "jumbotron text-center">
-		<h1>Meine TODOs</h1>
-	</div>
+<div class = "jumbotron text-center">
+	<h1>Meine TODOs</h1>
+</div>
 
-	<div class = "container-fluid">
-		<div class = "table-responsive">
-			<table class = "table table-hover">
-				<thead>
-					<tr>
-						<th class='titel'>Titel</th>
-						<th class='beschreibung'>Beschreibung</th>
-						<th class='deadline'>Deadline</th>
-						<th class='status'>Status</th>
-						<th></th>
-						<th></th>
-					</tr>
-				</thead>
-				<tbody>
-					{% for todo in todos %}
-					<tr>
-						<td>{{ todo.titel }}</td>
-						<td>{{ todo.beschreibung }}</td>
-						<td>{{ todo.tag }}.{{ todo.monat }}.{{ todo.jahr }}</td>
-						<td>
-							<div class = "progress">
-								<div class="progress-bar progress-bar-striped bg-success"
-											role = "progressbar" aria-valuenow='{{ todo.status }}' 
-											aria-valuemin="0" aria-valuemax="100" style="width:100%">
-								{{ todo.status }}
-							</div></td>
-						<td>
-							<button type = "button" class = "btn btn-primary btn">Bearbeiten</button>
-						</td>
-						<td>
-							<button type = "button" class = "btn btn-danger">Löschen</button>
-						</td>
-					</tr>
-					{% endfor %}
-				</tbody>
-			</table>
-		</div>
+<div class = "container-fluid">
+	<div class = "table-responsive">
+		<table class = "table table-hover">
+			<thead>
+				<tr>
+					<th class='titel'>Titel</th>
+					<th class='beschreibung'>Beschreibung</th>
+					<th class='deadline'>Deadline</th>
+					<th class='status'>Status</th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+
+			<tbody>
+				{% for todo in todos %}
+				<tr>
+					<td>{{ todo.titel }}</td>
+					<td>{{ todo.beschreibung }}</td>
+					<td>{{ todo.tag }}.{{ todo.monat }}.{{ todo.jahr }}</td>
+
+					<td>
+						<div class = "progress">
+							<div class="progress-bar progress-bar-striped bg-success"
+										role = "progressbar" aria-valuenow="{{ todo.status }}"
+										aria-valuemin="0" aria-valuemax="100" style="width:{{todo.status}}%">
+									{{ todo.status }}
+						</div>
+					</td>
+
+					<td>
+						<form action = "{% url 'todo-bearbeitung' id=todo.id %}"
+									method = "get">
+								{%csrf_token%}
+							<button type = "submit" class = "btn btn-primary btn">Bearbeiten</button>
+						</form>
+					</td>
+
+					<td>
+						<form action = "{% url 'delete_todo' id=todo.id %}"
+										method = "post">
+									{%csrf_token%}
+							<button type = "submit" class = "btn btn-danger">Löschen</button>
+						</form>
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
 	</div>
-	{%endblock body%}
+</div>
+{%endblock body%}

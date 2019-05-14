@@ -1,12 +1,11 @@
-from django.conf.urls import url
+from django.urls import path
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.home),
-    url(r'^uebersicht', views.home, name='todo-uebersicht'),
-    url(r'^neuesTodo',views.neuesTodo, name='todo-neu'),
-    url(r'^bearbeitungTodo', views.bearbeitungTodo, name='todo-bearbeitung'),
-    url(r'^impressum', views.impressum, name='todo-impressum'),
-
-    #url(r'^add_todo',views.add_todo, name='add_todo')
+    path('', views.home, name = 'todo-uebersicht'),
+    path('uebersicht', views.home, name = 'todo-uebersicht'),
+    path('neuesTodo',views.neuesTodo, name='todo-neu'),
+    path('bearbeitungTodo/<int:id>', views.bearbeitungTodo, name='todo-bearbeitung'),
+    path('impressum', views.impressum, name='todo-impressum'),
+    path('delete_todo/<int:id>',views.delete_todo, name='delete_todo'),
 ]
