@@ -4,23 +4,6 @@ from .forms import TodoForm
 from django.forms.models import model_to_dict
 # Create your views here.
 
-todos = [
-    {
-        'titel':'Todo Nr 1',
-        'beschreibung':'Todos auflisten können',
-        'deadline':'14 Mai 2019',
-        'status':20
-    },
-    {
-        'titel':'Todo Nr 2',
-        'beschreibung':'Todos löschen können',
-        'deadline':'14 Mai 2019',
-        'status':75
-    }
-]
-
-
-
 def home(request):
     context = {
         'todos': Todo.objects.all()
